@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Sayed I. Hashimi",
+  "classifications": [ "Console" ], 
+  "name": "Console",
+  "identity": "MyProject.10.Console.CSharp",         
+  "groupIdentity":"MyProject.10.Console",
+  "shortName": "con10",
+  "tags": {
+    "language": "C#"
+  },
+  "sourceName": "MyProject.Console",
+  "preferNameDirectory": true,
+  "symbols":{
+    
+    "MessageYear":{
+      "type": "parameter",
+      "datatype":"int"
+    },
+    "ThisYear":{
+      "type": "generated",
+      "generator": "now",
+      "parameters": {
+        "format": "yyyy"
+      }
+    },
+    "YearReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "ThisYear",
+        "fallbackVariableName": "MessageYear"
+      },
+      "replaces": "1234"
+    },
+
+    "KestrelPort": {
+      "type": "parameter",
+      "datatype": "integer",
+      "description": "Port number to use to configure Kestrel in launchSettings.json."
+    },
+    "KestrelPortGenerated": {
+      "type": "generated",
+      "generator": "port"
+    },
+    "KestrelPortReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "KestrelPort",
+        "fallbackVariableName": "KestrelPortGenerated"
+      },
+      "replaces": "2015"
+    }
+
+
+  }
+}
+

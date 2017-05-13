@@ -28,32 +28,11 @@
       "type": "generated",
       "generator": "coalesce",
       "parameters": {
-        "sourceVariableName": "ThisYear",
-        "fallbackVariableName": "MessageYear"
+        "sourceVariableName": "MessageYear",
+        "fallbackVariableName": "ThisYear"
       },
       "replaces": "1234"
-    },
-
-    "KestrelPort": {
-      "type": "parameter",
-      "datatype": "integer",
-      "description": "Port number to use to configure Kestrel in launchSettings.json."
-    },
-    "KestrelPortGenerated": {
-      "type": "generated",
-      "generator": "port"
-    },
-    "KestrelPortReplacer": {
-      "type": "generated",
-      "generator": "coalesce",
-      "parameters": {
-        "sourceVariableName": "KestrelPort",
-        "fallbackVariableName": "KestrelPortGenerated"
-      },
-      "replaces": "2015"
     }
-
-
   }
 }
 
